@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — the same hex values as extension/src/styles/tokens.css, kept in
+ * sync by hand so the website and the extension popup/options read as one product.
+ */
+:root {
+  --sp-bg: #ffffff;
+  --sp-bg-elevated: #f6f6f9;
+  --sp-bg-inverted: #14141a;
+  --sp-text: #14141a;
+  --sp-text-muted: #5c5c6e;
+  --sp-border: #e5e5ec;
+  --sp-accent: #4338ca;
+  --sp-accent-soft: #eeedfd;
+  --sp-accent-contrast: #ffffff;
+  --sp-danger: #d1293d;
+  color-scheme: light;
+}
+
+:root:not([data-theme="light"]) {
+  @media (prefers-color-scheme: dark) {
+    --sp-bg: #101014;
+    --sp-bg-elevated: #17171d;
+    --sp-bg-inverted: #f6f6f9;
+    --sp-text: #f2f2f6;
+    --sp-text-muted: #9797a8;
+    --sp-border: #262631;
+    --sp-accent: #8583f5;
+    --sp-accent-soft: #201f34;
+    --sp-accent-contrast: #100f18;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --sp-bg: #101014;
+  --sp-bg-elevated: #17171d;
+  --sp-bg-inverted: #f6f6f9;
+  --sp-text: #f2f2f6;
+  --sp-text-muted: #9797a8;
+  --sp-border: #262631;
+  --sp-accent: #8583f5;
+  --sp-accent-soft: #201f34;
+  --sp-accent-contrast: #100f18;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--sp-bg);
+  --color-surface: var(--sp-bg-elevated);
+  --color-foreground: var(--sp-text);
+  --color-muted: var(--sp-text-muted);
+  --color-border: var(--sp-border);
+  --color-accent: var(--sp-accent);
+  --color-accent-soft: var(--sp-accent-soft);
+  --color-accent-contrast: var(--sp-accent-contrast);
+  --color-danger: var(--sp-danger);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  border-color: var(--sp-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--sp-bg);
+  color: var(--sp-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--sp-accent);
+  color: var(--sp-accent-contrast);
+}

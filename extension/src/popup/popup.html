@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SpeedPilot</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="popup" id="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">▶</span>
+          <span class="brand-name">SpeedPilot</span>
+        </div>
+        <div class="topbar-actions">
+          <button id="open-options" class="icon-btn" type="button" aria-label="Open settings" title="Settings">⚙</button>
+          <button id="open-sidepanel" class="icon-btn" type="button" aria-label="Open side panel" title="Side panel">⋮</button>
+        </div>
+      </header>
+
+      <div id="content" aria-live="polite">
+        <!-- populated by popup.ts depending on state: loading / empty / single / multiple / error -->
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

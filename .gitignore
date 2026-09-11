@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+
+# build output
+extension/dist/
+website/.next/
+website/out/
+*.tsbuildinfo
+website/next-env.d.ts
+
+# env
+.env*
+!.env.example
+
+# editor / OS
+.DS_Store
+Thumbs.db
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

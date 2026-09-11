@@ -1,0 +1,23 @@
+{
+  "name": "@speedpilot/extension",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SpeedPilot Manifest V3 extension (Chrome / Edge / Chromium).",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js --mode=production",
+    "dev": "node build.js --mode=development --watch",
+    "typecheck": "tsc --noEmit",
+    "icons": "node scripts/build-icons.js",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@speedpilot/shared": "*"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "sharp": "^0.33.5",
+    "typescript": "^5.6.3",
+    "@types/chrome": "^0.0.287"
+  }
+}
