@@ -23,6 +23,37 @@ all. SpeedPilot gives you one consistent layer on top: the same popup, the same
 on-video controller, the same keyboard shortcuts, regardless of which site
 you're on. See the website's "Why This Exists" section for the full pitch.
 
+## Screenshots
+
+All real — captured from the actual built extension and the actual website,
+not staged mockups.
+
+**The on-video controller, live on an actual YouTube video:**
+
+![The SpeedPilot on-video controller — a small −, 1.00×, + pill — floating over the top-right corner of a playing YouTube video](website/public/screenshots/overlay-live.png)
+
+**The website, light and dark:**
+
+<table>
+<tr>
+<td><img src="website/public/screenshots/home-light.png" alt="SpeedPilot homepage hero in light mode" width="480" /></td>
+<td><img src="website/public/screenshots/home-dark.png" alt="SpeedPilot homepage hero in dark mode" width="480" /></td>
+</tr>
+</table>
+
+**Full feature grid, and the extension's real Settings page:**
+
+<table>
+<tr>
+<td><img src="website/public/screenshots/features-light.png" alt="The /features page's full 12-item feature grid" width="480" /></td>
+<td><img src="website/public/screenshots/extension-options.png" alt="SpeedPilot's real Settings page — general options, speed presets, keyboard shortcuts, and site rules" width="480" /></td>
+</tr>
+</table>
+
+**Mobile:**
+
+<img src="website/public/screenshots/home-mobile.png" alt="SpeedPilot homepage on a 390px-wide mobile viewport" width="280" />
+
 ## Architecture
 
 The extension follows one data flow, all inside the content script that runs on

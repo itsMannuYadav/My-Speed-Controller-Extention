@@ -94,8 +94,8 @@ function renderMediaSection(state: PageMediaState): HTMLElement {
 
 function renderPlaybackSection(media: MediaSnapshot): HTMLElement {
   const value = el("div", { className: "speed-value-lg" }, [`${media.playbackRate.toFixed(2)}×`]);
-  const slider = el("input", { className: "speed-slider", type: "range", min: "0.25", max: "3", step: "0.05" }) as HTMLInputElement;
-  slider.value = String(Math.min(3, Math.max(0.25, media.playbackRate)));
+  const slider = el("input", { className: "speed-slider", type: "range", min: "0.25", max: "4.5", step: "0.05" }) as HTMLInputElement;
+  slider.value = String(Math.min(4.5, Math.max(0.25, media.playbackRate)));
   slider.setAttribute("aria-label", "Playback speed");
   slider.addEventListener("input", () => void setSpeed(parseFloat(slider.value), "current"));
 

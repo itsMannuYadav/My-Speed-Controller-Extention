@@ -2,85 +2,103 @@
 // scattering strings across every component.
 
 export const NAV_LINKS = [
-  { href: "#features", label: "Features" },
-  { href: "#how-it-works", label: "How It Works" },
-  { href: "#shortcuts", label: "Shortcuts" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/features", label: "Features" },
+  { href: "/how-it-works", label: "How It Works" },
+  { href: "/shortcuts", label: "Shortcuts" },
+  { href: "/faq", label: "FAQ" },
 ];
 
-export const DEFAULT_SHORTCUT_LIST = [
-  { key: "A", action: "Decrease speed" },
-  { key: "D", action: "Increase speed" },
-  { key: "S", action: "Reset to 1×" },
-  { key: "Z", action: "Rewind" },
-  { key: "X", action: "Forward" },
-  { key: "V", action: "Toggle on-video controller" },
+export type ShortcutIconKey = "minus" | "plus" | "reset" | "rewind" | "forward" | "eye";
+
+export const DEFAULT_SHORTCUT_LIST: { key: string; action: string; icon: ShortcutIconKey }[] = [
+  { key: "A", action: "Decrease speed", icon: "minus" },
+  { key: "D", action: "Increase speed", icon: "plus" },
+  { key: "S", action: "Reset to 1×", icon: "reset" },
+  { key: "Z", action: "Rewind", icon: "rewind" },
+  { key: "X", action: "Forward", icon: "forward" },
+  { key: "V", action: "Toggle on-video controller", icon: "eye" },
 ];
+
+/** Maps to a lucide-react icon component in components/icons.tsx — kept as a
+ * plain string key here so this file stays pure data, no JSX/component imports. */
+export type FeatureIconKey =
+  | "zap"
+  | "sliders"
+  | "keyboard"
+  | "rewind"
+  | "pin"
+  | "layers"
+  | "refresh"
+  | "monitor"
+  | "timer"
+  | "pip"
+  | "focus"
+  | "volume";
 
 export interface FeatureItem {
-  icon: string;
+  icon: FeatureIconKey;
   title: string;
   description: string;
 }
 
 export const FEATURES: FeatureItem[] = [
   {
-    icon: "⚡",
+    icon: "zap",
     title: "Instant speed control",
     description: "Adjust playback from 0.05× to 16× in a click. Extreme values are clamped gracefully when a player can't keep up.",
   },
   {
-    icon: "🎚",
+    icon: "sliders",
     title: "Fine-grained speed",
     description: "Set your own step size and preset list — 0.75×, 1.1×, 1.75×, whatever fits how you actually watch.",
   },
   {
-    icon: "⌨",
+    icon: "keyboard",
     title: "Keyboard shortcuts",
     description: "A/D/S/Z/X/V by default, fully reassignable, and automatically disabled while you're typing anywhere on the page.",
   },
   {
-    icon: "⏪",
+    icon: "rewind",
     title: "Smart rewind & forward",
     description: "Configurable skip length — 5, 10, 15, 30 seconds, or your own value — for both directions.",
   },
   {
-    icon: "📌",
+    icon: "pin",
     title: "Per-site speed memory",
     description: "YouTube at 1.5×, lecture platforms at 1.75×, everything else at 1× — SpeedPilot remembers by hostname.",
   },
   {
-    icon: "🎬",
+    icon: "layers",
     title: "Multiple videos, handled",
     description: "Apply a speed to just the active player or every media element on the page — your choice, every time.",
   },
   {
-    icon: "🔄",
+    icon: "refresh",
     title: "Dynamic media detection",
     description: "A single MutationObserver — not a polling loop — catches videos a site loads in after the page first renders.",
   },
   {
-    icon: "📺",
+    icon: "monitor",
     title: "On-video controller",
     description: "A small floating −/+ readout over the player itself. Always on, on hover, auto-hide, or off — your call.",
   },
   {
-    icon: "⏱",
+    icon: "timer",
     title: "Time remaining, recalculated",
     description: "Remaining time and time saved update live as you change speed — without touching the video's real duration.",
   },
   {
-    icon: "🖼",
+    icon: "pip",
     title: "Picture-in-Picture",
     description: "One click when the browser and player support it. Disabled — never broken — when they don't.",
   },
   {
-    icon: "🖥",
+    icon: "focus",
     title: "Focus mode",
     description: "Dims everything but the player, without touching the host page's own layout or z-index.",
   },
   {
-    icon: "🔊",
+    icon: "volume",
     title: "Video and audio",
     description: "Podcasts, lecture recordings, and audio-only players get the same controls as video.",
   },

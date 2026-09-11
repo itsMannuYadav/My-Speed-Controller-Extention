@@ -122,10 +122,10 @@ function renderControls(state: PageMediaState): void {
     className: "speed-slider",
     type: "range",
     min: "0.25",
-    max: "3",
+    max: "4.5",
     step: "0.05",
   }) as HTMLInputElement;
-  slider.value = String(Math.min(3, Math.max(0.25, media.playbackRate)));
+  slider.value = String(Math.min(4.5, Math.max(0.25, media.playbackRate)));
   slider.setAttribute("aria-label", "Playback speed");
   slider.addEventListener("input", () => {
     void setSpeed(parseFloat(slider.value), "current");

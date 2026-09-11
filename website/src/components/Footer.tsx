@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { NAV_LINKS } from "@/lib/content";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
@@ -7,9 +8,7 @@ export default function Footer() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 py-12 sm:px-8 md:flex-row md:items-start md:justify-between">
         <div className="max-w-sm">
           <div className="flex items-center gap-2 font-semibold tracking-tight">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent text-sm text-accent-contrast" aria-hidden="true">
-              ▶
-            </span>
+            <Logo className="h-7 w-7" />
             SpeedPilot
           </div>
           <p className="mt-3 text-sm text-muted">
@@ -23,9 +22,9 @@ export default function Footer() {
             <ul className="flex flex-col gap-2 text-muted">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="hover:text-foreground">
+                  <Link href={link.href} className="transition-colors hover:text-foreground">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -34,14 +33,14 @@ export default function Footer() {
             <h3 className="mb-3 font-semibold">Install</h3>
             <ul className="flex flex-col gap-2 text-muted">
               <li>
-                <Link href="/docs/installation" className="hover:text-foreground">
+                <Link href="/docs/installation" className="transition-colors hover:text-foreground">
                   Installation guide
                 </Link>
               </li>
               <li>
-                <a href="#install" className="hover:text-foreground">
+                <Link href="/#install" className="transition-colors hover:text-foreground">
                   Load unpacked
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -49,14 +48,14 @@ export default function Footer() {
             <h3 className="mb-3 font-semibold">Trust</h3>
             <ul className="flex flex-col gap-2 text-muted">
               <li>
-                <a href="#privacy" className="hover:text-foreground">
+                <Link href="/privacy" className="transition-colors hover:text-foreground">
                   Privacy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#faq" className="hover:text-foreground">
+                <Link href="/faq" className="transition-colors hover:text-foreground">
                   FAQ
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

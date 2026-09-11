@@ -30,6 +30,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         {/* Runs before paint to avoid a flash of the wrong theme. */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        {/* Reveal.tsx hides content until JS + IntersectionObserver reveal it —
+            without JS, show everything immediately instead of hiding it forever. */}
+        <noscript>
+          <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
       </head>
       <body className="flex min-h-full flex-col">
         <Header />

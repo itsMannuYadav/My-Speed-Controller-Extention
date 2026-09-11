@@ -88,6 +88,9 @@ For each of `0.1×, 0.5×, 1×, 1.25×, 1.5×, 2×, 4×, 8×, 16×`:
       blank panel or console error
 - [ ] Opening the popup on a restricted page (e.g. a `chrome://` URL) shows
       the "not available here" state, not a hang
+- [ ] The popup/side panel never hang indefinitely waiting on a response from
+      the background relay — they resolve to a real state (media found, empty,
+      or unsupported) within a second or two, every time
 
 ## Cross-browser
 

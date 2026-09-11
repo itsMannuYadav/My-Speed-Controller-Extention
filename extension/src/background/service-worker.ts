@@ -29,13 +29,21 @@ chrome.runtime.onMessage.addListener((message: RuntimeMessage, sender, sendRespo
   if (!message || !RELAYED_TYPES.has(message.type)) return undefined;
 
   void (async () => {
-    const tab = await getActiveTab();
-    if (!tab?.id) {
+    try {
+      const tab = await getActiveTab();
+      if (!tab?.id) {
+        sendResponse(null);
+        return;
+      }
+      const response = await sendToTab(tab.id, message);
+      sendResponse(response);
+    } catch (err) {
+      // getActiveTab()/sendToTab() already guard their own failure modes, but
+      // an uncaught rejection here would otherwise leave the message port open
+      // forever — the caller's sendMessage() never resolves/rejects cleanly.
+      console.error("[SpeedPilot] relay failed for", message.type, err);
       sendResponse(null);
-      return;
     }
-    const response = await sendToTab(tab.id, message);
-    sendResponse(response);
   })();
 
   return true; // keep the message channel open for the async sendResponse above

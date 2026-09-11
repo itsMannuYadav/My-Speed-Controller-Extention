@@ -1,25 +1,21 @@
 import Hero from "@/components/Hero";
 import WhySection from "@/components/WhySection";
-import Features from "@/components/Features";
+import ScreenshotShowcase from "@/components/ScreenshotShowcase";
+import FeaturesPreview from "@/components/FeaturesPreview";
 import HowItWorks from "@/components/HowItWorks";
-import ShortcutsSection from "@/components/ShortcutsSection";
-import Compatibility from "@/components/Compatibility";
-import PrivacySection from "@/components/PrivacySection";
-import Faq from "@/components/Faq";
 import InstallSection from "@/components/InstallSection";
+import FaqPreview from "@/components/FaqPreview";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <WhySection />
-      <Features />
+      <ScreenshotShowcase />
+      <FeaturesPreview />
       <HowItWorks />
-      <ShortcutsSection />
-      <Compatibility />
-      <PrivacySection />
-      <Faq />
       <InstallSection />
+      <FaqPreview />
     </>
   );
 }
