@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 220" width="1200" height="220" role="img" aria-label="SpeedPilot data flow: MediaDetector to MediaRegistry to SpeedManager to PlaybackController, driven by a single MutationObserver, no polling">
+  <title>SpeedPilot architecture flow</title>
+  <defs>
+    <style>
+      .fl-bg { fill: #ffffff; }
+      .fl-label { font: 700 17px "Segoe UI", ui-sans-serif, system-ui, sans-serif; fill: #14141a; }
+      .fl-sub { font: 500 12px ui-monospace, "Segoe UI Mono", monospace; fill: #5c5c6e; }
+      .fl-caption { font: 500 13px ui-sans-serif, system-ui, sans-serif; fill: #5c5c6e; }
+      @media (prefers-reduced-motion: reduce) {
+        circle { display: none; }
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="220" class="fl-bg"/>
+  <line x1="206" y1="102" x2="284" y2="102" stroke="#c7c3f7" stroke-width="3"/>
+      <path d="M 275 96 L 284 102 L 275 108" fill="none" stroke="#c7c3f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><line x1="516" y1="102" x2="594" y2="102" stroke="#c7c3f7" stroke-width="3"/>
+      <path d="M 585 96 L 594 102 L 585 108" fill="none" stroke="#c7c3f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><line x1="826" y1="102" x2="904" y2="102" stroke="#c7c3f7" stroke-width="3"/>
+      <path d="M 895 96 L 904 102 L 895 108" fill="none" stroke="#c7c3f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+      <circle r="6" fill="#4338ca">
+        <animateMotion dur="5.4s" begin="-0s" repeatCount="indefinite" path="M 90 102 L 400 102 L 710 102 L 1020 102"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.86;1" dur="5.4s" begin="-0s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="6" fill="#4338ca">
+        <animateMotion dur="5.4s" begin="-1.8s" repeatCount="indefinite" path="M 90 102 L 400 102 L 710 102 L 1020 102"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.86;1" dur="5.4s" begin="-1.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="6" fill="#4338ca">
+        <animateMotion dur="5.4s" begin="-3.6s" repeatCount="indefinite" path="M 90 102 L 400 102 L 710 102 L 1020 102"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.86;1" dur="5.4s" begin="-3.6s" repeatCount="indefinite"/>
+      </circle>
+  
+      <g>
+        <rect x="-20" y="60" width="220" height="84" rx="16" fill="#ffffff" stroke="#4338ca" stroke-width="2"/>
+        <text x="90" y="96" text-anchor="middle" class="fl-label">MediaDetector</text>
+        <text x="90" y="118" text-anchor="middle" class="fl-sub">MutationObserver</text>
+      </g>
+      <g>
+        <rect x="290" y="60" width="220" height="84" rx="16" fill="#ffffff" stroke="#4338ca" stroke-width="2"/>
+        <text x="400" y="96" text-anchor="middle" class="fl-label">MediaRegistry</text>
+        <text x="400" y="118" text-anchor="middle" class="fl-sub">dedupe · prune</text>
+      </g>
+      <g>
+        <rect x="600" y="60" width="220" height="84" rx="16" fill="#ffffff" stroke="#4338ca" stroke-width="2"/>
+        <text x="710" y="96" text-anchor="middle" class="fl-label">SpeedManager</text>
+        <text x="710" y="118" text-anchor="middle" class="fl-sub">resolves rate</text>
+      </g>
+      <g>
+        <rect x="910" y="60" width="220" height="84" rx="16" fill="#ffffff" stroke="#4338ca" stroke-width="2"/>
+        <text x="1020" y="96" text-anchor="middle" class="fl-label">PlaybackController</text>
+        <text x="1020" y="118" text-anchor="middle" class="fl-sub">get/set rate · seek</text>
+      </g>
+  <text x="600" y="204" text-anchor="middle" class="fl-caption">One MutationObserver in, one resolved playback rate out — no polling loop, anywhere.</text>
+</svg>
