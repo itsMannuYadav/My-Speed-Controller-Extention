@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { RotateCcw, RotateCw } from "lucide-react";
 import { formatDuration, remainingRealTime, estimateTimeSavedRemaining } from "@speedpilot/shared";
+import { useAnimatedNumber, useHoverCapable, usePrefersReducedMotion } from "@/lib/motion";
 
 const DEMO_DURATION = 3600; // a representative 60-minute video
 const DEMO_START_POSITION = 1200; // 20:00 already watched
@@ -10,6 +11,8 @@ const PRESETS = [0.75, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 4, 4.5];
 const STEP = 0.25;
 const MIN = 0.25;
 const MAX = 4.5;
+const GAUGE_RADIUS = 42;
+const GAUGE_CIRCUMFERENCE = 2 * Math.PI * GAUGE_RADIUS;
 
 /**
  * The homepage's interactive demo (planning doc §7 hero mockup + §50 interactive
@@ -22,7 +25,11 @@ export default function PlaybackDemo() {
   const [speed, setSpeed] = useState(1.5);
   const [position, setPosition] = useState(DEMO_START_POSITION);
   const [pop, setPop] = useState(false);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const prevSpeed = useRef(speed);
+  const hoverCapable = useHoverCapable();
+  const reducedMotion = usePrefersReducedMotion();
+  const displaySpeed = useAnimatedNumber(speed);
 
   useEffect(() => {
     if (prevSpeed.current === speed) return;
@@ -31,6 +38,17 @@ export default function PlaybackDemo() {
     const t = setTimeout(() => setPop(false), 320);
     return () => clearTimeout(t);
   }, [speed]);
+
+  function onTilt(e: ReactPointerEvent<HTMLDivElement>) {
+    if (!hoverCapable || reducedMotion) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    setTilt({ x: py * -6, y: px * 8 });
+  }
+  function resetTilt() {
+    setTilt({ x: 0, y: 0 });
+  }
 
   const remaining = useMemo(
     () => remainingRealTime({ duration: DEMO_DURATION, currentTime: position, playbackRate: speed }),
@@ -49,16 +67,64 @@ export default function PlaybackDemo() {
   }
 
   const progressPct = (position / DEMO_DURATION) * 100;
+  const gaugeProgress = (speed - MIN) / (MAX - MIN);
+  const gaugeOffset = GAUGE_CIRCUMFERENCE * (1 - gaugeProgress);
+  const streakDuration = Math.max(0.35, 1.9 - gaugeProgress * 1.5);
 
   return (
-    <div className="w-full max-w-sm rounded-2xl border border-border bg-background/95 p-5 shadow-xl shadow-black/5 backdrop-blur transition-shadow duration-500 hover:shadow-2xl hover:shadow-accent/10">
+    <div
+      className="w-full max-w-sm rounded-2xl border border-border bg-background/95 p-5 shadow-xl shadow-black/5 backdrop-blur transition-shadow duration-500 hover:shadow-2xl hover:shadow-accent/10"
+      style={{
+        transform: `perspective(800px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+        transition: "transform 250ms cubic-bezier(0.16,1,0.3,1)",
+      }}
+      onPointerMove={onTilt}
+      onPointerLeave={resetTilt}
+    >
       <div className="flex items-center justify-between text-xs font-medium text-muted">
         <span>youtube.com (demo)</span>
         <span className="rounded-full bg-accent-soft px-2 py-0.5 font-semibold text-accent">Video</span>
       </div>
 
-      <div className="mt-5 text-center">
-        <div className={`text-4xl font-extrabold tracking-tight tabular-nums ${pop ? "animate-speed-pop text-accent" : ""}`}>{speed.toFixed(2)}×</div>
+      <div className="relative mt-5 flex items-center justify-center overflow-hidden py-2">
+        <div className="absolute left-0 flex flex-col gap-1.5 opacity-70" aria-hidden="true">
+          {[0, 1, 2].map((i) => (
+            <span
+              key={i}
+              className="sp-streak block h-0.5 rounded-full bg-accent"
+              style={{ width: `${14 + i * 6}px`, animationDuration: `${streakDuration}s`, animationDelay: `${i * -0.25}s` }}
+            />
+          ))}
+        </div>
+
+        <svg viewBox="0 0 100 100" className="h-28 w-28 -rotate-90" aria-hidden="true">
+          <circle cx="50" cy="50" r={GAUGE_RADIUS} fill="none" stroke="var(--sp-border)" strokeWidth="6" />
+          <circle
+            cx="50"
+            cy="50"
+            r={GAUGE_RADIUS}
+            fill="none"
+            stroke="var(--sp-accent)"
+            strokeWidth="6"
+            strokeLinecap="round"
+            strokeDasharray={GAUGE_CIRCUMFERENCE}
+            strokeDashoffset={gaugeOffset}
+            style={{ transition: "stroke-dashoffset 280ms cubic-bezier(0.16,1,0.3,1)" }}
+          />
+        </svg>
+        <div className={`absolute text-3xl font-extrabold tracking-tight tabular-nums ${pop ? "animate-speed-pop text-accent" : ""}`}>
+          {displaySpeed.toFixed(2)}×
+        </div>
+
+        <div className="absolute right-0 flex flex-col gap-1.5 opacity-70" aria-hidden="true">
+          {[0, 1, 2].map((i) => (
+            <span
+              key={i}
+              className="sp-streak block h-0.5 rounded-full bg-accent"
+              style={{ width: `${14 + i * 6}px`, animationDuration: `${streakDuration}s`, animationDelay: `${i * -0.25 - 0.4}s` }}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="mt-4 flex items-center justify-center gap-5">

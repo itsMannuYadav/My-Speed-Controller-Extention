@@ -135,6 +135,48 @@ body {
   animation: fade-in-up 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* --- ambient hero glow (AmbientGlow.tsx) --- */
+.sp-glow {
+  will-change: transform;
+}
+@keyframes sp-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(4vw, 3vw) scale(1.08); }
+}
+@keyframes sp-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-3vw, 4vw) scale(1.05); }
+}
+@keyframes sp-drift-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(2vw, -3vw) scale(1.1); }
+}
+.sp-glow-a { animation: sp-drift-a 16s ease-in-out infinite; }
+.sp-glow-b { animation: sp-drift-b 20s ease-in-out infinite; }
+.sp-glow-c { animation: sp-drift-c 18s ease-in-out infinite; }
+
+/* --- reactive speed streaks (PlaybackDemo) --- */
+@keyframes sp-streak-flow {
+  from { transform: translateX(-100%); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+.sp-streak {
+  animation-name: sp-streak-flow;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* --- count-up stat tiles (CountUp/StatsStrip) --- */
+@keyframes sp-tile-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.sp-tile-in {
+  animation: sp-tile-in 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

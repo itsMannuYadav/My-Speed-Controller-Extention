@@ -6,8 +6,15 @@
       .fl-label { font: 700 17px "Segoe UI", ui-sans-serif, system-ui, sans-serif; fill: #14141a; }
       .fl-sub { font: 500 12px ui-monospace, "Segoe UI Mono", monospace; fill: #5c5c6e; }
       .fl-caption { font: 500 13px ui-sans-serif, system-ui, sans-serif; fill: #5c5c6e; }
+      .fl-pulse { offset-rotate: 0deg; animation: fl-move 5.4s linear infinite; }
+      @keyframes fl-move {
+        0% { offset-distance: 0%; opacity: 0; }
+        8% { opacity: 1; }
+        86% { opacity: 1; }
+        100% { offset-distance: 100%; opacity: 0; }
+      }
       @media (prefers-reduced-motion: reduce) {
-        circle { display: none; }
+        .fl-pulse { display: none; }
       }
     </style>
   </defs>
@@ -16,19 +23,9 @@
       <path d="M 275 96 L 284 102 L 275 108" fill="none" stroke="#c7c3f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><line x1="516" y1="102" x2="594" y2="102" stroke="#c7c3f7" stroke-width="3"/>
       <path d="M 585 96 L 594 102 L 585 108" fill="none" stroke="#c7c3f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><line x1="826" y1="102" x2="904" y2="102" stroke="#c7c3f7" stroke-width="3"/>
       <path d="M 895 96 L 904 102 L 895 108" fill="none" stroke="#c7c3f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  
-      <circle r="6" fill="#4338ca">
-        <animateMotion dur="5.4s" begin="-0s" repeatCount="indefinite" path="M 90 102 L 400 102 L 710 102 L 1020 102"/>
-        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.86;1" dur="5.4s" begin="-0s" repeatCount="indefinite"/>
-      </circle>
-      <circle r="6" fill="#4338ca">
-        <animateMotion dur="5.4s" begin="-1.8s" repeatCount="indefinite" path="M 90 102 L 400 102 L 710 102 L 1020 102"/>
-        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.86;1" dur="5.4s" begin="-1.8s" repeatCount="indefinite"/>
-      </circle>
-      <circle r="6" fill="#4338ca">
-        <animateMotion dur="5.4s" begin="-3.6s" repeatCount="indefinite" path="M 90 102 L 400 102 L 710 102 L 1020 102"/>
-        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.86;1" dur="5.4s" begin="-3.6s" repeatCount="indefinite"/>
-      </circle>
+  <circle class="fl-pulse" r="6" fill="#4338ca" style="offset-path:path('M 90 102 L 400 102 L 710 102 L 1020 102'); animation-delay:-0s"/>
+      <circle class="fl-pulse" r="6" fill="#4338ca" style="offset-path:path('M 90 102 L 400 102 L 710 102 L 1020 102'); animation-delay:-1.8s"/>
+      <circle class="fl-pulse" r="6" fill="#4338ca" style="offset-path:path('M 90 102 L 400 102 L 710 102 L 1020 102'); animation-delay:-3.6s"/>
   
       <g>
         <rect x="-20" y="60" width="220" height="84" rx="16" fill="#ffffff" stroke="#4338ca" stroke-width="2"/>

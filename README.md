@@ -1,5 +1,10 @@
 # SpeedPilot
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/media/banner-dark.svg">
+  <img src=".github/media/banner-light.svg" alt="SpeedPilot — control playback, your way" width="100%">
+</picture>
+
 **Control playback. Your way.**
 
 SpeedPilot is a universal video/audio speed controller: a Manifest V3 browser
@@ -59,6 +64,13 @@ not staged mockups.
 The extension follows one data flow, all inside the content script that runs on
 the page itself (the background service worker is a thin message relay, not a
 second brain):
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/media/flow-dark.svg">
+  <img src=".github/media/flow-light.svg" alt="Data flow: MediaDetector to MediaRegistry to SpeedManager to PlaybackController" width="100%">
+</picture>
+
+The same pipeline, plus the two side channels the diagram above leaves out:
 
 ```text
 MediaDetector  →  MediaRegistry  →  SpeedManager  →  PlaybackController(s)

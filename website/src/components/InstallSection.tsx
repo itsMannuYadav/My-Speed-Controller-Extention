@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
+import MagneticLink from "@/components/MagneticLink";
 import { EDGE_STORE_URL } from "@/lib/content";
 
 const CHROME_STEPS = [
@@ -29,14 +30,14 @@ export default function InstallSection() {
             <div className="group flex h-full flex-col rounded-2xl border border-accent/40 bg-accent-soft/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/10">
               <h3 className="font-semibold">Edge</h3>
               <p className="mt-2 text-sm text-muted">Available now on the Microsoft Edge Add-ons store.</p>
-              <Link
+              <MagneticLink
                 href={EDGE_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-5 inline-flex w-fit items-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-contrast transition-all hover:scale-[1.03] hover:shadow-lg hover:shadow-accent/25 active:scale-[0.98]"
               >
                 Get for Edge
-              </Link>
+              </MagneticLink>
             </div>
           </Reveal>
           <Reveal delay={120}>
