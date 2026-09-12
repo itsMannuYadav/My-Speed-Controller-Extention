@@ -1,17 +1,11 @@
 import Link from "next/link";
 import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
+import { EDGE_STORE_URL } from "@/lib/content";
 
 const CHROME_STEPS = [
   "Open chrome://extensions in a new tab.",
   "Turn on Developer mode (top-right toggle).",
-  'Click "Load unpacked".',
-  "Select the extension/dist build folder.",
-];
-
-const EDGE_STEPS = [
-  "Open edge://extensions in a new tab.",
-  "Turn on Developer mode (left sidebar toggle).",
   'Click "Load unpacked".',
   "Select the extension/dist build folder.",
 ];
@@ -24,18 +18,29 @@ export default function InstallSection() {
           <div className="max-w-xl">
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Install SpeedPilot</h2>
             <p className="mt-3 text-muted">
-              SpeedPilot isn&rsquo;t on the Chrome Web Store or Edge Add-ons yet — for now it&rsquo;s loaded as an
-              unpacked extension, which takes about a minute.
+              SpeedPilot is live on Edge Add-ons — one click and you&rsquo;re done. It&rsquo;s not on the Chrome Web
+              Store yet, so for now Chrome needs a manual load, which takes about a minute.
             </p>
           </div>
         </Reveal>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           <Reveal delay={60}>
-            <InstallCard browser="Chrome" steps={CHROME_STEPS} />
+            <div className="group flex h-full flex-col rounded-2xl border border-accent/40 bg-accent-soft/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/10">
+              <h3 className="font-semibold">Edge</h3>
+              <p className="mt-2 text-sm text-muted">Available now on the Microsoft Edge Add-ons store.</p>
+              <Link
+                href={EDGE_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex w-fit items-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-contrast transition-all hover:scale-[1.03] hover:shadow-lg hover:shadow-accent/25 active:scale-[0.98]"
+              >
+                Get for Edge
+              </Link>
+            </div>
           </Reveal>
           <Reveal delay={120}>
-            <InstallCard browser="Edge" steps={EDGE_STEPS} />
+            <InstallCard browser="Chrome" steps={CHROME_STEPS} />
           </Reveal>
         </div>
 
@@ -47,7 +52,7 @@ export default function InstallSection() {
             >
               Full installation guide
             </Link>
-            <p className="text-xs text-muted">Build the extension yourself with a couple of terminal commands — see the guide.</p>
+            <p className="text-xs text-muted">Building from source works on both browsers, including Edge — see the guide.</p>
           </div>
         </Reveal>
       </Container>

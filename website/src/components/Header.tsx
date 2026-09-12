@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { NAV_LINKS } from "@/lib/content";
+import { NAV_LINKS, EDGE_STORE_URL } from "@/lib/content";
 import ThemeToggle from "@/components/ThemeToggle";
 import MobileMenu from "@/components/MobileMenu";
 import Logo from "@/components/Logo";
@@ -44,7 +44,9 @@ export default function Header() {
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
           <Link
-            href="/#install"
+            href={EDGE_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-contrast transition-all hover:scale-[1.03] hover:shadow-lg hover:shadow-accent/25 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             Install

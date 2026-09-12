@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Link from "next/link";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import PermissionsTable from "@/components/PermissionsTable";
 import Reveal from "@/components/Reveal";
+import { EDGE_STORE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Installation Guide",
-  description: "Build and load the SpeedPilot extension in Chrome or Edge.",
+  description: "Get SpeedPilot from Edge Add-ons, or build and load it in Chrome.",
 };
 
 export default function InstallationPage() {
@@ -16,12 +18,29 @@ export default function InstallationPage() {
       <PageHero
         eyebrow="Install"
         title="Installing SpeedPilot"
-        description="SpeedPilot isn't published to the Chrome Web Store or Edge Add-ons yet, so for now it's built from source and loaded as an unpacked extension. The whole process takes a couple of minutes."
+        description="SpeedPilot is live on Edge Add-ons — one click and you're set. It isn't on the Chrome Web Store yet, so for now Chrome needs a build-from-source, unpacked install. The whole process takes a couple of minutes."
       />
 
       <Container className="py-16 sm:py-20">
         <Reveal>
-          <section>
+          <section className="flex flex-col items-start gap-3 rounded-2xl border border-accent/40 bg-accent-soft/40 p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="text-lg font-bold">Using Edge?</h2>
+              <p className="mt-1 text-sm text-muted">Skip the steps below — install directly from the Microsoft Edge Add-ons store.</p>
+            </div>
+            <Link
+              href={EDGE_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-contrast transition-all hover:scale-[1.03] hover:shadow-lg hover:shadow-accent/25 active:scale-[0.98]"
+            >
+              Get for Edge
+            </Link>
+          </section>
+        </Reveal>
+
+        <Reveal delay={40}>
+          <section className="mt-12">
             <h2 className="text-xl font-bold">1. Build the extension</h2>
             <p className="mt-2 max-w-2xl text-sm text-muted">From the root of the project:</p>
             <pre className="mt-4 overflow-x-auto rounded-xl border border-border bg-surface p-4 text-sm transition-colors duration-300 hover:border-accent/30">
@@ -51,7 +70,8 @@ export default function InstallationPage() {
               </ol>
             </div>
             <div>
-              <h2 className="text-xl font-bold">2b. Load in Edge</h2>
+              <h2 className="text-xl font-bold">2b. Load in Edge (dev build)</h2>
+              <p className="mt-1 text-xs text-muted">Only needed for a source build — most people should just use the store link above.</p>
               <ol className="mt-4 flex flex-col gap-3 text-sm text-muted">
                 <Step n={1}>
                   Open <code className="rounded bg-surface px-1.5 py-0.5">edge://extensions</code>

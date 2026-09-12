@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { NAV_LINKS } from "@/lib/content";
+import { NAV_LINKS, EDGE_STORE_URL } from "@/lib/content";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function MobileMenu() {
@@ -46,11 +46,20 @@ export default function MobileMenu() {
             </Link>
           ))}
           <Link
-            href="/#install"
+            href={EDGE_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="mt-2 rounded-full bg-accent px-4 py-3 text-center text-base font-semibold text-accent-contrast transition-transform active:scale-[0.98]"
           >
-            Install SpeedPilot
+            Get for Edge
+          </Link>
+          <Link
+            href="/#install"
+            onClick={() => setOpen(false)}
+            className="rounded-lg px-3 py-2 text-center text-sm font-medium text-muted transition-colors hover:bg-surface hover:text-foreground"
+          >
+            Install on Chrome
           </Link>
           <div className="mt-4">
             <ThemeToggle />

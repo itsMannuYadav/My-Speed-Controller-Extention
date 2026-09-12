@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Play } from "lucide-react";
 import PlaybackDemo from "@/components/PlaybackDemo";
+import { EDGE_STORE_URL } from "@/lib/content";
 
 export default function Hero() {
   return (
@@ -19,20 +20,22 @@ export default function Hero() {
           </p>
           <div className="animate-fade-in-up mt-8 flex flex-wrap items-center gap-3" style={{ animationDelay: "210ms" }}>
             <Link
-              href="/#install"
+              href={EDGE_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-contrast transition-all hover:scale-[1.03] hover:shadow-lg hover:shadow-accent/25 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
-              Install Extension
+              Get for Edge — it&rsquo;s free
             </Link>
             <Link
-              href="/how-it-works"
+              href="/#install"
               className="rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:bg-surface"
             >
-              See How It Works
+              Install on Chrome
             </Link>
           </div>
           <p className="animate-fade-in-up mt-5 text-xs text-muted" style={{ animationDelay: "260ms" }}>
-            Free. No account. No tracking. Works on Chrome and Edge.
+            Free. No account. No tracking. Live on Edge Add-ons — Chrome Web Store coming soon.
           </p>
         </div>
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAV_LINKS } from "@/lib/content";
+import { NAV_LINKS, EDGE_STORE_URL } from "@/lib/content";
 import Logo from "@/components/Logo";
 
 export default function Footer() {
@@ -33,13 +33,18 @@ export default function Footer() {
             <h3 className="mb-3 font-semibold">Install</h3>
             <ul className="flex flex-col gap-2 text-muted">
               <li>
+                <Link href={EDGE_STORE_URL} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground">
+                  Get for Edge
+                </Link>
+              </li>
+              <li>
                 <Link href="/docs/installation" className="transition-colors hover:text-foreground">
                   Installation guide
                 </Link>
               </li>
               <li>
                 <Link href="/#install" className="transition-colors hover:text-foreground">
-                  Load unpacked
+                  Install on Chrome
                 </Link>
               </li>
             </ul>

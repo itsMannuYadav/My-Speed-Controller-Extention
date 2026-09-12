@@ -1,6 +1,9 @@
 // Centralized site copy — one place to edit headings/body text instead of
 // scattering strings across every component.
 
+export const EDGE_STORE_URL =
+  "https://microsoftedge.microsoft.com/addons/detail/iocdcljdhpbhohdkndkigidagmmcfckp";
+
 export const NAV_LINKS = [
   { href: "/features", label: "Features" },
   { href: "/how-it-works", label: "How It Works" },
