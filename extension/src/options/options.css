@@ -26,9 +26,7 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 9px;
-  background: var(--sp-accent);
-  color: var(--sp-accent-contrast);
-  font-size: 15px;
+  background: none;
 }
 
 .page-header h1 {

@@ -9,7 +9,7 @@ import { EDGE_STORE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Installation Guide",
-  description: "Get SpeedPilot from Edge Add-ons, or build and load it in Chrome.",
+  description: "Get My Speed Up from Edge Add-ons, or build and load it in Chrome.",
 };
 
 export default function InstallationPage() {
@@ -17,8 +17,8 @@ export default function InstallationPage() {
     <>
       <PageHero
         eyebrow="Install"
-        title="Installing SpeedPilot"
-        description="SpeedPilot is live on Edge Add-ons — one click and you're set. It isn't on the Chrome Web Store yet, so for now Chrome needs a build-from-source, unpacked install. The whole process takes a couple of minutes."
+        title="Installing My Speed Up"
+        description="My Speed Up is live on Edge Add-ons — one click and you're set. It isn't on the Chrome Web Store yet, so for now Chrome needs a build-from-source, unpacked install. The whole process takes a couple of minutes."
       />
 
       <Container className="py-16 sm:py-20">
@@ -92,7 +92,7 @@ export default function InstallationPage() {
           <section className="mt-12">
             <h2 className="text-xl font-bold">3. Try it</h2>
             <p className="mt-2 max-w-2xl text-sm text-muted">
-              Open any page with an HTML5 video or audio element and play it. Click the SpeedPilot icon in your
+              Open any page with an HTML5 video or audio element and play it. Click the My Speed Up icon in your
               toolbar, or use the default shortcuts (<kbd className="rounded border border-border px-1">A</kbd>/
               <kbd className="rounded border border-border px-1">D</kbd> to step speed,{" "}
               <kbd className="rounded border border-border px-1">S</kbd> to reset).

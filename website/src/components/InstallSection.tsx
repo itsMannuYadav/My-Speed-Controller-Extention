@@ -17,9 +17,9 @@ export default function InstallSection() {
       <Container className="py-20">
         <Reveal>
           <div className="max-w-xl">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Install SpeedPilot</h2>
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Install My Speed Up</h2>
             <p className="mt-3 text-muted">
-              SpeedPilot is live on Edge Add-ons — one click and you&rsquo;re done. It&rsquo;s not on the Chrome Web
+              My Speed Up is live on Edge Add-ons — one click and you&rsquo;re done. It&rsquo;s not on the Chrome Web
               Store yet, so for now Chrome needs a manual load, which takes about a minute.
             </p>
           </div>

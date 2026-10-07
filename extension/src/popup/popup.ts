@@ -32,7 +32,7 @@ function renderUnsupported(): void {
   content.append(
     el("div", { className: "state-panel" }, [
       el("div", { className: "state-icon" }, ["🚫"]),
-      el("h2", {}, ["SpeedPilot isn't available here"]),
+      el("h2", {}, ["My Speed Up isn't available here"]),
       el("p", {}, ["This page doesn't allow extensions to run (e.g. a browser settings page or the Web Store)."]),
     ])
   );
@@ -44,7 +44,7 @@ function renderEmpty(hostname: string): void {
     el("div", { className: "state-panel" }, [
       el("div", { className: "state-icon" }, ["🎬"]),
       el("h2", {}, ["No media detected"]),
-      el("p", {}, [`Play a video or audio on ${hostname} and SpeedPilot will detect it automatically.`]),
+      el("p", {}, [`Play a video or audio on ${hostname} and My Speed Up will detect it automatically.`]),
     ])
   );
 }

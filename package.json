@@ -2,7 +2,7 @@
   "name": "speedpilot",
   "private": true,
   "version": "1.0.0",
-  "description": "SpeedPilot — universal video speed controller (website + extension monorepo)",
+  "description": "My Speed Up — universal video speed controller (website + extension monorepo)",
   "workspaces": [
     "shared",
     "website",

@@ -1,4 +1,4 @@
-// Build script for the SpeedPilot extension. No framework — esbuild bundles each
+// Build script for the My Speed Up extension. No framework — esbuild bundles each
 // surface (background/content/popup/options/sidepanel) as a standalone IIFE, then
 // static HTML/CSS/manifest/icons are copied alongside into dist/, which is what you
 // point "Load unpacked" at in chrome://extensions or edge://extensions.

@@ -2,13 +2,14 @@
   "name": "@speedpilot/extension",
   "private": true,
   "version": "1.0.0",
-  "description": "SpeedPilot Manifest V3 extension (Chrome / Edge / Chromium).",
+  "description": "My Speed Up Manifest V3 extension (Chrome / Edge / Chromium).",
   "type": "module",
   "scripts": {
     "build": "node build.js --mode=production",
     "dev": "node build.js --mode=development --watch",
     "typecheck": "tsc --noEmit",
     "icons": "node scripts/build-icons.js",
+    "store-assets": "node scripts/build-store-assets.js",
     "lint": "tsc --noEmit"
   },
   "dependencies": {

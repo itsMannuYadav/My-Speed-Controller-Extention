@@ -1,13 +1,13 @@
-# SpeedPilot
+# My Speed Up
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset=".github/media/banner-dark.svg">
-  <img src=".github/media/banner-light.svg" alt="SpeedPilot — control playback, your way" width="100%">
+  <img src=".github/media/banner-light.svg" alt="My Speed Up — control playback, your way" width="100%">
 </picture>
 
 **Control playback. Your way.**
 
-SpeedPilot is a universal video/audio speed controller: a Manifest V3 browser
+My Speed Up is a universal video/audio speed controller: a Manifest V3 browser
 extension for Chrome and Edge, plus the public website that explains and hosts
 installation instructions for it. This repo is an npm-workspaces monorepo
 containing both, plus the logic they share.
@@ -24,7 +24,7 @@ speedpilot/
 ## Why it exists
 
 Every video site puts speed control somewhere different — if it exposes one at
-all. SpeedPilot gives you one consistent layer on top: the same popup, the same
+all. My Speed Up gives you one consistent layer on top: the same popup, the same
 on-video controller, the same keyboard shortcuts, regardless of which site
 you're on. See the website's "Why This Exists" section for the full pitch.
 
@@ -35,14 +35,14 @@ not staged mockups.
 
 **The on-video controller, live on an actual YouTube video:**
 
-![The SpeedPilot on-video controller — a small −, 1.00×, + pill — floating over the top-right corner of a playing YouTube video](website/public/screenshots/overlay-live.png)
+![The My Speed Up on-video controller — a small −, 1.00×, + pill — floating over the top-right corner of a playing YouTube video](website/public/screenshots/overlay-live.png)
 
 **The website, light and dark:**
 
 <table>
 <tr>
-<td><img src="website/public/screenshots/home-light.png" alt="SpeedPilot homepage hero in light mode" width="480" /></td>
-<td><img src="website/public/screenshots/home-dark.png" alt="SpeedPilot homepage hero in dark mode" width="480" /></td>
+<td><img src="website/public/screenshots/home-light.png" alt="My Speed Up homepage hero in light mode" width="480" /></td>
+<td><img src="website/public/screenshots/home-dark.png" alt="My Speed Up homepage hero in dark mode" width="480" /></td>
 </tr>
 </table>
 
@@ -51,13 +51,13 @@ not staged mockups.
 <table>
 <tr>
 <td><img src="website/public/screenshots/features-light.png" alt="The /features page's full 12-item feature grid" width="480" /></td>
-<td><img src="website/public/screenshots/extension-options.png" alt="SpeedPilot's real Settings page — general options, speed presets, keyboard shortcuts, and site rules" width="480" /></td>
+<td><img src="website/public/screenshots/extension-options.png" alt="My Speed Up's real Settings page — general options, speed presets, keyboard shortcuts, and site rules" width="480" /></td>
 </tr>
 </table>
 
 **Mobile:**
 
-<img src="website/public/screenshots/home-mobile.png" alt="SpeedPilot homepage on a 390px-wide mobile viewport" width="280" />
+<img src="website/public/screenshots/home-mobile.png" alt="My Speed Up homepage on a 390px-wide mobile viewport" width="280" />
 
 ## Architecture
 
@@ -154,7 +154,7 @@ once (or restart dev) since those are only copied at build start, not watched.
 After editing source and rebuilding, click the refresh icon on the extension's
 card in `chrome://extensions` / `edge://extensions` to pick up the new build.
 
-The same `extension/dist` output loads in both browsers — SpeedPilot targets
+The same `extension/dist` output loads in both browsers — My Speed Up targets
 standard Manifest V3 + Chromium extension APIs rather than anything
 Chrome-only, so no separate Edge build is needed.
 
@@ -165,6 +165,12 @@ npm run build:all
 ```
 
 Produces the website's `.next` production build and `extension/dist`.
+
+## Publishing
+
+Step-by-step Chrome Web Store / Edge Add-ons submission (listing copy, permission
+justifications, graphics) lives in [docs/PUBLISHING.md](docs/PUBLISHING.md). Listing
+graphics are regenerated with `npm run store-assets --workspace extension`.
 
 ## Testing
 
@@ -209,12 +215,12 @@ instead of spread thin. Listed in the extension's own Settings page too:
 
 ## Troubleshooting
 
-- **Popup says "SpeedPilot isn't available here"** — some pages (browser
+- **Popup says "My Speed Up isn't available here"** — some pages (browser
   settings pages, the Chrome/Edge Web Store, `chrome://` URLs) don't allow any
   extension to run on them. That's a browser restriction, not a bug.
 - **"No media detected" but a video is visible** — the video may be inside a
   cross-origin iframe (see Architecture above), or hasn't started loading yet;
-  SpeedPilot picks it up automatically once it's in the DOM.
+  My Speed Up picks it up automatically once it's in the DOM.
 - **A shortcut doesn't fire** — shortcuts are disabled while typing in any
   input/textarea/contenteditable field by design. Check Settings to confirm
   the shortcut is still enabled and bound to the key you expect.

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 220" width="1200" height="220" role="img" aria-label="SpeedPilot data flow: MediaDetector to MediaRegistry to SpeedManager to PlaybackController, driven by a single MutationObserver, no polling">
-  <title>SpeedPilot architecture flow</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 220" width="1200" height="220" role="img" aria-label="My Speed Up data flow: MediaDetector to MediaRegistry to SpeedManager to PlaybackController, driven by a single MutationObserver, no polling">
+  <title>My Speed Up architecture flow</title>
   <defs>
     <style>
       .fl-bg { fill: #101014; }

@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 import { PRIVACY_ICONS } from "@/components/icons";
 
 const POINTS = [
-  { title: "No browsing history collected", description: "SpeedPilot never records which sites you visit or what you watch." },
+  { title: "No browsing history collected", description: "My Speed Up never records which sites you visit or what you watch." },
   { title: "No analytics, no trackers", description: "No usage analytics, ads, or third-party scripts are bundled with the extension." },
   { title: "Local-first storage", description: "Settings and site rules live in your browser's local extension storage by default." },
   { title: "Sync is opt-in and explicit", description: "Turning on sync mirrors only settings and site rules — never browsing data — and it's off unless you enable it." },
@@ -16,7 +16,7 @@ export default function PrivacySection() {
         <Reveal>
           <div className="max-w-xl">
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Privacy is a feature, not a footnote.</h2>
-            <p className="mt-3 text-muted">SpeedPilot only needs to see the page you&rsquo;re actively watching media on — nothing more.</p>
+            <p className="mt-3 text-muted">My Speed Up only needs to see the page you&rsquo;re actively watching media on — nothing more.</p>
           </div>
         </Reveal>
         <div className="mt-10 grid gap-5 sm:grid-cols-2">

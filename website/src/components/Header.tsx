@@ -30,7 +30,7 @@ export default function Header() {
           <span className="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg]">
             <Logo className="h-7 w-7" />
           </span>
-          SpeedPilot
+          My Speed Up
         </Link>
 
         <nav className="hidden items-center gap-7 text-sm font-medium text-muted md:flex" aria-label="Primary">

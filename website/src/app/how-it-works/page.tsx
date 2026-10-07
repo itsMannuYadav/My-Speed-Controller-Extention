@@ -5,7 +5,7 @@ import Compatibility from "@/components/Compatibility";
 
 export const metadata: Metadata = {
   title: "How It Works",
-  description: "Install, open a video, and control playback — plus an honest look at what SpeedPilot can and can't reach.",
+  description: "Install, open a video, and control playback — plus an honest look at what My Speed Up can and can't reach.",
 };
 
 export default function HowItWorksPage() {

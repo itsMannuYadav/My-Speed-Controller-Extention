@@ -1,5 +1,5 @@
 /**
- * Shared type definitions used by both the SpeedPilot website (marketing demo) and
+ * Shared type definitions used by both the My Speed Up website (marketing demo) and
  * the browser extension (real implementation). Keeping these in one place means the
  * website's interactive demo and the extension's storage model can never drift apart.
  */

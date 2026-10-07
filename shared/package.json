@@ -2,7 +2,7 @@
   "name": "@speedpilot/shared",
   "private": true,
   "version": "1.0.0",
-  "description": "Types, constants, and pure utilities shared by the SpeedPilot website and extension.",
+  "description": "Types, constants, and pure utilities shared by the My Speed Up website and extension.",
   "type": "module",
   "main": "./index.ts",
   "types": "./index.ts",

@@ -19,7 +19,7 @@ export default function ScreenshotShowcase() {
               <div className="relative aspect-[989/500] w-full bg-surface">
                 <Image
                   src="/screenshots/overlay-live.png"
-                  alt="The SpeedPilot on-video controller — a small −, 1.00×, + pill — floating over the top-right corner of a playing YouTube video"
+                  alt="The My Speed Up on-video controller — a small −, 1.00×, + pill — floating over the top-right corner of a playing YouTube video"
                   fill
                   className="object-cover object-right-top"
                   sizes="(min-width: 1024px) 60vw, 100vw"
@@ -36,7 +36,7 @@ export default function ScreenshotShowcase() {
               <div className="relative aspect-[1425/1000] w-full bg-surface">
                 <Image
                   src="/screenshots/extension-options.png"
-                  alt="SpeedPilot's Settings page, showing General options, speed presets, keyboard shortcuts, and site rules"
+                  alt="My Speed Up's Settings page, showing General options, speed presets, keyboard shortcuts, and site rules"
                   fill
                   className="object-cover object-top"
                   sizes="(min-width: 1024px) 40vw, 100vw"

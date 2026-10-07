@@ -4,7 +4,7 @@ import ShortcutsSection from "@/components/ShortcutsSection";
 
 export const metadata: Metadata = {
   title: "Keyboard Shortcuts",
-  description: "SpeedPilot's default keyboard shortcuts — every one reassignable or disabled from Settings.",
+  description: "My Speed Up's default keyboard shortcuts — every one reassignable or disabled from Settings.",
 };
 
 export default function ShortcutsPage() {
