@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="max-w-sm">
           <div className="flex items-center gap-2 font-semibold tracking-tight">
             <Logo className="h-7 w-7" />
-            SpeedPilot
+            My Speed Up
           </div>
           <p className="mt-3 text-sm text-muted">
             Control playback. Your way. A local-first, privacy-first video speed controller for Chrome and Edge.
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-5 text-center text-xs text-muted">
-        SpeedPilot is an independent project and isn&rsquo;t affiliated with any website it can control playback on.
+        My Speed Up is an independent project and isn&rsquo;t affiliated with any website it can control playback on.
       </div>
     </footer>
   );

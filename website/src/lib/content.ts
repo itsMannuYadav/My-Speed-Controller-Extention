@@ -68,7 +68,7 @@ export const FEATURES: FeatureItem[] = [
   {
     icon: "pin",
     title: "Per-site speed memory",
-    description: "YouTube at 1.5×, lecture platforms at 1.75×, everything else at 1× — SpeedPilot remembers by hostname.",
+    description: "YouTube at 1.5×, lecture platforms at 1.75×, everything else at 1× — My Speed Up remembers by hostname.",
   },
   {
     icon: "layers",
@@ -111,12 +111,12 @@ export const HOW_IT_WORKS = [
   {
     step: "01",
     title: "Install",
-    description: "Add SpeedPilot to Chrome or Edge — it does nothing until a page actually has media on it.",
+    description: "Add My Speed Up to Chrome or Edge — it does nothing until a page actually has media on it.",
   },
   {
     step: "02",
     title: "Open a video",
-    description: "Visit any site with standard HTML5 video or audio. SpeedPilot detects it automatically, including content loaded in later.",
+    description: "Visit any site with standard HTML5 video or audio. My Speed Up detects it automatically, including content loaded in later.",
   },
   {
     step: "03",
@@ -148,7 +148,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: "Does it collect my browsing history?",
-    answer: "No. SpeedPilot has no analytics, no trackers, and makes no network requests of its own. Settings stay in your browser's local extension storage unless you explicitly turn on sync.",
+    answer: "No. My Speed Up has no analytics, no trackers, and makes no network requests of its own. Settings stay in your browser's local extension storage unless you explicitly turn on sync.",
   },
   {
     question: "Can I use keyboard shortcuts?",
@@ -156,7 +156,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: "Does it work on Microsoft Edge?",
-    answer: "Yes — SpeedPilot is built on Manifest V3 and standard Chromium extension APIs, so the same build runs on Chrome, Edge, and other Chromium-based browsers.",
+    answer: "Yes — My Speed Up is built on Manifest V3 and standard Chromium extension APIs, so the same build runs on Chrome, Edge, and other Chromium-based browsers.",
   },
 ];
 
@@ -178,6 +178,6 @@ export const PERMISSION_NOTES = [
   {
     permission: "host permissions (http/https)",
     reason:
-      "A universal speed controller has to be able to reach media on any site you visit — this is the one broad permission SpeedPilot genuinely needs. It's also what makes reading the active tab and messaging its content script work without a separate activeTab grant, since that permission adds nothing once broad host access already exists. Nothing else is requested.",
+      "A universal speed controller has to be able to reach media on any site you visit — this is the one broad permission My Speed Up genuinely needs. It's also what makes reading the active tab and messaging its content script work without a separate activeTab grant, since that permission adds nothing once broad host access already exists. Nothing else is requested.",
   },
 ];

@@ -197,7 +197,7 @@ function renderShortcutsSection(): HTMLElement {
           });
           return link;
         })(),
-        ". SpeedPilot can't override shortcuts the browser itself reserves.",
+        ". My Speed Up can't override shortcuts the browser itself reserves.",
       ]
     ),
   ]);
@@ -313,7 +313,7 @@ async function updateSiteRules(mutate: () => Promise<void>): Promise<void> {
 function renderFutureSection(): HTMLElement {
   const section = el("section", { className: "card" }, [
     el("h2", {}, ["Coming later"]),
-    el("p", { className: "card-desc" }, ["Deliberately not in this release, so the rest of SpeedPilot could be solid instead of spread thin."]),
+    el("p", { className: "card-desc" }, ["Deliberately not in this release, so the rest of My Speed Up could be solid instead of spread thin."]),
     el(
       "div",
       { className: "future-list" },

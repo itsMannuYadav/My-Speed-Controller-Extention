@@ -32,9 +32,7 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 7px;
-  background: var(--sp-accent);
-  color: var(--sp-accent-contrast);
-  font-size: 12px;
+  background: none;
 }
 
 .icon-btn {

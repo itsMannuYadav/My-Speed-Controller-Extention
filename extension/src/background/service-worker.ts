@@ -41,7 +41,7 @@ chrome.runtime.onMessage.addListener((message: RuntimeMessage, sender, sendRespo
       // getActiveTab()/sendToTab() already guard their own failure modes, but
       // an uncaught rejection here would otherwise leave the message port open
       // forever — the caller's sendMessage() never resolves/rejects cleanly.
-      console.error("[SpeedPilot] relay failed for", message.type, err);
+      console.error("[My Speed Up] relay failed for", message.type, err);
       sendResponse(null);
     }
   })();

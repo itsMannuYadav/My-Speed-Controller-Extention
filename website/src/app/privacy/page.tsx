@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Privacy",
-  description: "SpeedPilot's local-first privacy architecture, and exactly why each browser permission is requested.",
+  description: "My Speed Up's local-first privacy architecture, and exactly why each browser permission is requested.",
 };
 
 export default function PrivacyPage() {
@@ -16,7 +16,7 @@ export default function PrivacyPage() {
       <PageHero
         eyebrow="Privacy"
         title="Local-first, by design."
-        description="SpeedPilot only ever needs the page you're actively watching media on. Here's exactly what that means in practice."
+        description="My Speed Up only ever needs the page you're actively watching media on. Here's exactly what that means in practice."
       />
       <PrivacySection />
       <Container className="py-16 sm:py-20">

@@ -1,6 +1,6 @@
 import type { ShortcutMap, UserSettings } from "./types";
 
-export const BRAND_NAME = "SpeedPilot";
+export const BRAND_NAME = "My Speed Up";
 export const BRAND_TAGLINE = "Control playback. Your way.";
 
 /** Hard bounds. Every speed value that reaches storage or a media element is

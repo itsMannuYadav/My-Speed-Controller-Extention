@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "SpeedPilot — Universal Video Speed Controller",
-    template: "%s — SpeedPilot",
+    default: "My Speed Up: Video Speed Controller",
+    template: "%s — My Speed Up",
   },
   description:
     "Control playback speed on any HTML5 video or audio, across the web — instant speed control, per-site memory, and keyboard shortcuts, with nothing sent anywhere.",

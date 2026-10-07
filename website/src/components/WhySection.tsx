@@ -40,7 +40,7 @@ export default function WhySection() {
       <Container className="pb-20">
         <Reveal delay={150}>
           <p className="max-w-2xl text-lg font-medium">
-            SpeedPilot provides one consistent control layer — the same shortcuts, the same popup, the same on-video
+            My Speed Up provides one consistent control layer — the same shortcuts, the same popup, the same on-video
             controller — no matter which site you&rsquo;re on.
           </p>
         </Reveal>

@@ -1,4 +1,4 @@
-# SpeedPilot — Manual Test Plan
+# My Speed Up — Manual Test Plan
 
 Run through this after any change to `extension/`, before considering it done.
 There's no automated browser suite (see README) so this is what stands in for

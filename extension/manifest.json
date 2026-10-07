@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "SpeedPilot — Universal Video Speed Controller",
-  "short_name": "SpeedPilot",
+  "name": "My Speed Up: Video Speed Controller",
+  "short_name": "My Speed Up",
   "version": "1.0.0",
   "description": "Instantly control playback speed on any HTML5 video or audio, with per-site memory and keyboard shortcuts.",
   "icons": {
@@ -12,7 +12,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "SpeedPilot",
+    "default_title": "My Speed Up",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",
