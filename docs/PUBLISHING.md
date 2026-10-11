@@ -53,7 +53,7 @@ NOTES
 Some sites use protected or custom players (for example DRM streams) that don't expose a standard media element; the controller can't change those. My Speed Up is an independent project and is not affiliated with any website it works on.
 ```
 
-**Official URL / Homepage:** your deployed website URL (e.g. `https://<your-site>.vercel.app`)
+**Official URL / Homepage:** `https://videospeed.mannuyadav.me/`
 **Support URL:** `https://github.com/itsMannuYadav/My-Speed-Controller-Extention/issues`
 **Mature content:** No
 
@@ -80,7 +80,7 @@ A speed controller must find and control the video/audio elements on whichever s
 
 **Data usage:** leave every "collected data" checkbox **unchecked** (nothing is collected). Tick all three certifications (no selling, no use unrelated to the single purpose, no creditworthiness/lending use).
 
-**Privacy policy URL:** `<your site>/privacy` — deploy the website first (the page already exists).
+**Privacy policy URL:** `https://videospeed.mannuyadav.me/privacy` (live)
 
 ## 3. Test instructions for reviewers (Distribution → "Test instructions")
 ```
@@ -92,7 +92,7 @@ Visibility **Public** · Regions **All** · Pricing **Free** → **Submit for re
 The all-sites host permission means a manual review; expect days up to ~2 weeks. Choose "defer publishing" if you want to press publish yourself after approval.
 
 ## 5. Before you submit — checklist
-- [ ] Website deployed (e.g. Vercel) and `/privacy` loads
+- [x] Website deployed — https://videospeed.mannuyadav.me/ and `/privacy` load
 - [ ] 2-step verification on the Google account
 - [ ] Contact email verified in dashboard → Account
 - [ ] Zip loads via `chrome://extensions` → Developer mode → Load unpacked (unzip first) and works on a real video
