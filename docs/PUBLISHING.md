@@ -7,7 +7,7 @@ Everything below is ready to copy/paste into the
 | What | File | Size |
 |---|---|---|
 | Extension package | `extension/my-speed-up-v1.0.0.zip` | — |
-| Store icon | `extension/store-logo-300.png` (the 128×128 icon is already inside the zip) | 300×300 |
+| Store icon | `extension/store/store-icon-128x128.png` | 128×128 |
 | Screenshot 1 | `extension/store-screenshots/store-01-overlay.png` | 1280×800 |
 | Screenshot 2 | `extension/store-screenshots/store-02-settings.png` | 1280×800 |
 | Small promo tile | `extension/store/promo-small-440x280.png` | 440×280 |
